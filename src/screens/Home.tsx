@@ -13,7 +13,6 @@ import { Order, OrderProps} from '../components/Order';
 import { Button } from '../components/Button';
 
 import { dateFormat } from '../utils/firestoreDateFormat';
-import { isLoading } from 'expo-font';
 import { Loading } from '../components/Loading';
 
 export function Home() {
@@ -86,7 +85,7 @@ export function Home() {
               Meus chamados
             </Heading>
             <Text color="gray.200">
-              3
+              {orders.length}
             </Text>
           </HStack>
 
@@ -106,7 +105,7 @@ export function Home() {
 
       </HStack>
       {
-        isLoading ? 
+        loading ? 
           <Loading /> 
         : 
           <FlatList 
